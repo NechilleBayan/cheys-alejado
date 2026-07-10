@@ -104,18 +104,25 @@ header{
 
 /* hero */
 .hero{background:var(--paper);padding:88px 0 96px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .85fr;gap:72px;align-items:center}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;column-gap:56px;
+  grid-template-areas:"intro portrait" "detail portrait";align-items:start;
+}
+.hero-intro{grid-area:intro}
+.portrait{grid-area:portrait;align-self:start}
+.hero-detail{grid-area:detail}
 .avail{
   display:inline-flex;align-items:center;gap:.55rem;font-size:.82rem;font-weight:500;
   color:var(--ink);background:var(--white);border:1px solid var(--line);
   padding:.45rem 1rem;border-radius:999px;margin-bottom:28px;
 }
 .avail .dot{width:8px;height:8px;border-radius:50%;background:#3BA55D;flex-shrink:0}
-.hero h1{font-size:clamp(2.6rem,5vw,3.8rem);margin-bottom:22px;max-width:14ch}
-.hero h1 em{font-style:italic;font-weight:500;color:var(--coral)}
+.hero h1{font-size:clamp(2.2rem,3.6vw,3rem);margin-bottom:28px}
+.hero h1 .hl-1{display:block;white-space:nowrap}
+.hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--coral)}
 .hero-desc{color:var(--ink-soft);font-size:1.08rem;margin-bottom:34px;max-width:46ch}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
-.hero-note{font-size:.85rem;color:var(--ink-soft)}
+.hero-note{font-size:.85rem;color:var(--ink-soft);max-width:52ch}
 .hero-note strong{color:var(--ink);font-weight:600}
 .portrait{position:relative;max-width:420px;justify-self:end;width:100%}
 .portrait-arch{
@@ -278,11 +285,22 @@ footer{background:var(--ink-deep);border-top:1px solid var(--line-dark);padding:
 .foot-nav{display:flex;gap:1.6rem}
 .foot-nav a:hover{color:var(--paper)}
 
+@media(min-width:921px){
+  /* raise portrait so its mid-height aligns with the "Drive the growth" line */
+  .portrait{transform:translateY(-82px)}
+}
 @media(max-width:920px){
   section{padding:76px 0}
-  .hero{padding:56px 0 72px}
-  .hero-grid{grid-template-columns:1fr;gap:48px}
-  .portrait{max-width:320px;justify-self:center}
+  .hero{padding:44px 0 64px}
+  .hero-grid{grid-template-columns:1fr;column-gap:0;row-gap:22px;
+    grid-template-areas:"intro" "portrait" "detail"}
+  .hero-intro{text-align:center}
+  .hero h1 .hl-1{white-space:normal}
+  .portrait{max-width:260px;justify-self:center;align-self:center;transform:none}
+  .hero-detail{text-align:center}
+  .hero-desc{margin-left:auto;margin-right:auto}
+  .hero-cta{justify-content:center}
+  .hero-note{margin-left:auto;margin-right:auto}
   .band-grid{grid-template-columns:1fr 1fr;gap:28px}
   .svc-grid,.about-grid{grid-template-columns:1fr;gap:44px}
   .tools-core{grid-template-columns:repeat(3,1fr)}
@@ -335,9 +353,16 @@ footer{background:var(--ink-deep);border-top:1px solid var(--line-dark);padding:
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-intro">
       <div class="avail"><span class="dot"></span>Accepting new clients · US time zone hours</div>
-      <h1>Delegate the details. <em>Drive the growth.</em></h1>
+      <h1><span class="hl-1">Delegate the details.</span> <em>Drive the growth.</em></h1>
+    </div>
+    <div class="portrait reveal">
+      <div class="portrait-arch"></div>
+      <img src="transparent-blooming.png" alt="Cheyserr Bayan-Alejado, virtual assistant" width="824" height="824">
+      <div class="portrait-tag">Cheyserr Bayan-Alejado<small>Admin Operations · CRM · Lead Generation</small></div>
+    </div>
+    <div class="hero-detail">
       <p class="hero-desc">Hi, I'm Cheyserr! I provide specialized administrative support for healthcare and service-based businesses. From CRM updates and lead follow-ups to smooth client communication, I keep your daily operations organized. Delegate the details to me, and get your time back to focus on the big picture.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-primary">Let's work together
@@ -346,11 +371,6 @@ footer{background:var(--ink-deep);border-top:1px solid var(--line-dark);padding:
         <a href="#services" class="btn btn-ghost">Explore my services</a>
       </div>
       <p class="hero-note"><strong>Healthcare Admin VA:</strong> built on a nursing background, hands-on experience with medical clinics, and proven expertise training remote medical VAs.</p>
-    </div>
-    <div class="portrait reveal">
-      <div class="portrait-arch"></div>
-      <img src="transparent-blooming.png" alt="Cheyserr Bayan-Alejado, virtual assistant" width="824" height="824">
-      <div class="portrait-tag">Cheyserr Bayan-Alejado<small>Admin Operations · CRM · Lead Generation</small></div>
     </div>
   </div>
 </section>
