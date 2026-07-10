@@ -2,6 +2,8 @@
 
 A single-page portfolio site for Cheyserr Bayan-Alejado, a virtual assistant specializing in admin operations, CRM, and lead generation for healthcare and service-based businesses.
 
+**Live site:** https://nechillebayan.github.io/cheys-alejado/
+
 ## Structure
 
 - `index.html` — the entire site (HTML, CSS, and JS in one self-contained file)
