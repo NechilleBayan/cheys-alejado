@@ -7,7 +7,8 @@ A single-page portfolio site for Cheyserr Bayan-Alejado, a virtual assistant spe
 ## Structure
 
 - `index.html` — the entire site (HTML, CSS, and JS in one self-contained file)
-- `transparent-blooming.png` — hero portrait
+- `assets/headshot/transparent-blooming.png` — hero portrait
+- `assets/tool-icons/` — logo assets for the tools section
 - `Cheyserr-Bayan-Alejado-Resume.pdf` — downloadable résumé linked from the site
 
 ## Running locally
