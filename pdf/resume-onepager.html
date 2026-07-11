@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cheyserr Bayan-Alejado One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#33373F;
+  --ink-soft:#6A6F79;
+  --coral:#FF7F6A;
+  --coral-deep:#E8664F;
+  --peach:#FFD3C4;
+  --paper:#F6F7F9;
+  --mist:#9AD1D4;
+  --line:#E7E9ED;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:Letter;margin:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  line-height:1.5;
+  font-size:9.4pt;
+  background:#fff;
+}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+.page{width:8.5in;height:11in;margin:0 auto;padding:0;display:flex;flex-direction:column;overflow:hidden}
+
+/* ---------- header band ---------- */
+.masthead{
+  background:var(--coral);color:#fff;
+  padding:.34in .55in .26in;
+  position:relative;overflow:hidden;flex-shrink:0;
+}
+.masthead::after{
+  content:"";position:absolute;right:-70px;top:-70px;
+  width:210px;height:210px;border-radius:50%;
+  background:rgba(255,255,255,.09);
+}
+.masthead::before{
+  content:"";position:absolute;right:60px;bottom:-90px;
+  width:140px;height:140px;border-radius:50%;
+  background:rgba(255,211,196,.22);
+}
+.mast-inner{position:relative;z-index:1}
+.masthead h1{font-size:24pt;color:#fff;letter-spacing:-.02em}
+.role{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:8.6pt;
+  letter-spacing:.26em;text-transform:uppercase;
+  color:#fff;margin-top:7px;
+}
+.role .divot{color:var(--peach);margin:0 9px;font-weight:400}
+.contact{
+  display:flex;flex-wrap:wrap;gap:5px 20px;margin-top:12px;
+  font-size:8.2pt;font-weight:500;color:rgba(255,255,255,.95);
+}
+.contact span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.contact svg{width:11px;height:11px;flex-shrink:0}
+.contact .st{fill:none;stroke:var(--peach);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.contact .fl{fill:var(--peach)}
+
+/* ---------- body grid ---------- */
+.grid{display:grid;grid-template-columns:1.72fr 1fr;gap:0;flex:1}
+.main{padding:.26in .28in .3in .55in}
+.side{padding:.26in .55in .3in .3in;background:var(--paper);border-left:1px solid var(--line)}
+
+.sec{margin-bottom:12px}
+.sec:last-child{margin-bottom:0}
+.sec-title{
+  font-size:8.4pt;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--coral-deep);
+  display:flex;align-items:center;gap:10px;margin-bottom:8px;
+}
+.sec-title::after{content:"";flex:1;height:2px;background:var(--peach);border-radius:2px}
+.side .sec-title::after{background:var(--mist);opacity:.55}
+
+.summary{font-size:9.2pt;color:var(--ink);line-height:1.52}
+
+/* experience */
+.exp-part{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:11pt;
+  color:var(--coral-deep);letter-spacing:.01em;
+  margin:4px 0 8px;
+}
+.exp-part::after{
+  content:"";height:1px;background:var(--peach);flex:1;
+}
+.job{margin-bottom:5px}
+.job-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.job-role{font-family:'Fraunces',serif;font-size:10pt;font-weight:600;color:var(--ink)}
+.job-date{font-size:7.4pt;color:var(--ink-soft);font-weight:500;white-space:nowrap;flex-shrink:0}
+.job-org{font-size:8.4pt;font-weight:600;color:var(--coral-deep);margin-bottom:3px}
+ul{list-style:none;margin:0}
+.job li{position:relative;padding-left:13px;font-size:8.6pt;color:var(--ink-soft);line-height:1.44;margin-bottom:2px}
+.job li::before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:var(--coral)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.tag{
+  font-size:7.2pt;font-weight:600;color:var(--ink-soft);
+  background:var(--paper);border:1px solid var(--line);
+  padding:1.5px 8px;border-radius:20px;
+}
+.note{font-size:8.3pt;color:var(--ink-soft);line-height:1.45}
+
+/* sidebar: areas of focus */
+.focus{margin-bottom:8px}
+.focus:last-child{margin-bottom:0}
+.focus h3{font-size:8.5pt;font-weight:600;color:var(--ink);font-family:'Inter',sans-serif;display:flex;align-items:center;gap:7px;margin-bottom:1px}
+.focus h3 .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0}
+.focus p{font-size:8pt;color:var(--ink-soft);line-height:1.42;padding-left:13px}
+
+/* sidebar: tool chips */
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.chip{
+  font-size:7.3pt;font-weight:600;color:var(--ink);
+  background:#fff;border:1px solid var(--line);
+  padding:3px 4px;border-radius:6px;
+  text-align:center;white-space:nowrap;overflow:hidden;
+}
+.chip.hi{background:var(--peach);border-color:transparent;color:var(--coral-deep)}
+.chip.cool{background:rgba(154,209,212,.22);border-color:transparent;color:#3F7F83}
+
+/* education */
+.edu h3{font-size:8.8pt;font-weight:600;color:var(--ink);font-family:'Fraunces',serif}
+.edu .school{font-size:8.1pt;color:var(--coral-deep);font-weight:600;margin-top:1px}
+.edu p{font-size:7.9pt;color:var(--ink-soft);line-height:1.4;margin-top:2px}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="masthead">
+    <div class="mast-inner">
+      <h1>Cheyserr Bayan-Alejado</h1>
+      <div class="role">Admin Operations<span class="divot">·</span>CRM<span class="divot">·</span>Lead Generation</div>
+      <div class="contact">
+        <span><svg viewBox="0 0 24 24"><path class="st" d="M4 4h16v16H4z"/><path class="st" d="M4 6l8 6 8-6"/></svg>alejadocheyserr@gmail.com</span>
+        <span><svg viewBox="0 0 24 24"><path class="fl" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>+63 927 113 9529</span>
+        <span><svg viewBox="0 0 24 24"><path class="st" d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle class="st" cx="12" cy="10" r="3"/></svg>South Cotabato, Philippines</span>
+        <span><svg viewBox="0 0 24 24"><circle class="st" cx="12" cy="12" r="9"/><path class="st" d="M3 12h18"/><path class="st" d="M12 3a13.5 13.5 0 0 1 0 18 13.5 13.5 0 0 1 0-18z"/></svg>Flexible working hours across US timezones</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- MAIN COLUMN -->
+    <div class="main">
+      <div class="sec">
+        <div class="sec-title">Profile</div>
+        <p class="summary">Reliable, detail-oriented virtual assistant providing specialized administrative support for healthcare and service-based businesses. From CRM upkeep and lead follow-up to client communication, I keep daily operations organized so you get your time back for the big picture.</p>
+      </div>
+
+      <div class="sec">
+        <div class="sec-title">Experience</div>
+
+        <div class="exp-part">Virtual Assistance &amp; Client Work</div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-role">Admin Virtual Assistant</span></div>
+          <div class="job-org">Mathnasium of Killarney</div>
+          <ul>
+            <li>Kept student records updated, booked appointments, and checked documents so the center ran smoothly day to day.</li>
+          </ul>
+          <div class="tags"><span class="tag">Scheduling</span><span class="tag">Records</span><span class="tag">Data accuracy</span></div>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-role">Lead Generation Specialist</span></div>
+          <div class="job-org">Showtech</div>
+          <ul>
+            <li>Built and researched lead lists, ran live cold calls and email outreach, and handled follow-ups so prospects didn't go cold.</li>
+          </ul>
+          <div class="tags"><span class="tag">Cold calling</span><span class="tag">Prospecting</span><span class="tag">Outreach</span></div>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-role">Social Media Manager</span></div>
+          <div class="job-org">Edillon Multi-Specialty Clinics · Salon Suites of San Antonio · Spencer's Kitchen</div>
+          <ul>
+            <li>Ran the social accounts for three US businesses, one a medical clinic, with content and engagement kept healthcare-appropriate.</li>
+          </ul>
+          <div class="tags"><span class="tag">Content planning</span><span class="tag">Community engagement</span></div>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-role">Training &amp; Hiring Manager</span></div>
+          <div class="job-org">Medical VA Company</div>
+          <ul>
+            <li>Hired and trained healthcare professionals for remote VA roles, from onboarding and skills training to process guidance.</li>
+          </ul>
+          <div class="tags"><span class="tag">Healthcare</span><span class="tag">Onboarding</span><span class="tag">Coaching</span></div>
+        </div>
+
+        <div class="exp-part">Training &amp; Operations Leadership</div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-role">Training Supervisor</span><span class="job-date">Apr 2020 – Present</span></div>
+          <div class="job-org">GoPro Ltd, Philippine Branch</div>
+          <ul>
+            <li>Vendor coordination, training logistics, curriculum revamps, reporting, applicant screening, and team performance for new product launches.</li>
+          </ul>
+          <div class="tags"><span class="tag">Vendor coordination</span><span class="tag">Reporting</span><span class="tag">Coaching</span></div>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-role">Training Supervisor · Senior Trainer · Communications Coach</span><span class="job-date">Jul 2014 – Jan 2020</span></div>
+          <div class="job-org">Concentrix, Taguig City</div>
+          <ul>
+            <li>Six years on large US accounts, moving from billing and B2B support into launching programs, writing training materials, and coaching teams.</li>
+          </ul>
+          <div class="tags"><span class="tag">Planning &amp; reporting</span><span class="tag">Training design</span><span class="tag">Performance coaching</span></div>
+        </div>
+
+        <p class="note">Earlier: US and UK telecom support roles, 2011 to 2014.</p>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="side">
+      <div class="sec">
+        <div class="sec-title">Areas of Focus</div>
+        <div class="focus">
+          <h3><span class="dot"></span>Operations &amp; Admin</h3>
+          <p>Scheduling, reporting, records, vendor coordination, and document checking.</p>
+        </div>
+        <div class="focus">
+          <h3><span class="dot"></span>Lead Gen &amp; Outreach</h3>
+          <p>Prospecting, lead research, live cold calls, email outreach, and CRM updates.</p>
+        </div>
+        <div class="focus">
+          <h3><span class="dot"></span>Client Communication</h3>
+          <p>Patient and customer coordination, billing and general inquiries, inbox triage.</p>
+        </div>
+        <div class="focus">
+          <h3><span class="dot"></span>Social Media Support</h3>
+          <p>Content planning, caption writing, brand communication, and engagement.</p>
+        </div>
+        <div class="focus">
+          <h3><span class="dot"></span>Training &amp; Onboarding</h3>
+          <p>Hiring, onboarding, SOP writing, and performance coaching for remote teams.</p>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-title">Tools</div>
+        <div class="chips">
+          <span class="chip hi">GoHighLevel</span>
+          <span class="chip hi">BoldTrail</span>
+          <span class="chip hi">Salesforce</span>
+          <span class="chip">ActiveCampaign</span>
+          <span class="chip">Mailchimp</span>
+          <span class="chip">ClickUp</span>
+          <span class="chip">Google Workspace</span>
+          <span class="chip">Microsoft 365</span>
+          <span class="chip">Slack</span>
+          <span class="chip">Zoom</span>
+          <span class="chip">WordPress</span>
+          <span class="chip">Canva</span>
+          <span class="chip">CapCut</span>
+          <span class="chip">Meta Ads</span>
+          <span class="chip">TikTok Ads</span>
+          <span class="chip cool">ChatGPT</span>
+          <span class="chip cool">Claude</span>
+          <span class="chip cool">Gemini</span>
+        </div>
+      </div>
+
+      <div class="sec edu">
+        <div class="sec-title">Education</div>
+        <h3>BS Nursing</h3>
+        <div class="school">Notre Dame of Marbel University</div>
+        <p>Koronadal City, Philippines · 2011<br>Passed the Philippine Nursing Licensure Exam, July 2011</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
